@@ -1,21 +1,32 @@
 <style>
-.imageclass {
+    .imageclass {
         float:left;
         width:50%;
         height:100%;
-}
-
-.textclass {
+    }
+    
+    .textclass {
         float:left;
         width:50%;
         text-align:right;
-}
+    }
+        
+    a:link {text-decoration:none;}
+    a:visited {text-decoration:none;}
+    a:hover {text-decoration:underline;}
+    a:active {text-decoration:underline;}
     
-a:link {text-decoration:none;}
-a:visited {text-decoration:none;}
-a:hover {text-decoration:underline;}
-a:active {text-decoration:underline;}
+    .cover {
+        width:35%;
+        height:auto;
+        align-self:left;
+    }
     
+    h2 {
+        font-family: Courier;
+        color: #005CB9;
+    }
+        
 </style>
 
 <html>
@@ -23,7 +34,11 @@ a:active {text-decoration:underline;}
 <!--<div id="upto-calendar-container-TwiKKO" class="upto-calendar-plugin"><script>!function(c,b,a){function d(h){var e=document.getElementById("upto-calendar-container-"+c),f=document.createElement("SCRIPT"),g="http://upto.com/embed/js/embed.js";f.onreadystatechange=function(){if(f.readyState==="loaded"||f.readyState==="complete"){f.onreadystatechange=null;h()}};f.onload=function(){h()};f.setAttribute("src",g);e.parentNode.insertBefore(f,e)}d(function(){upto.init(c,b,a)})}("TwiKKO",["biTO"],{"template":"3"});</script></div>-->
 <body>
     <img src="images/logo.jpg" class="imageclass" />
-    <div align="left" class="textclass">
+    <div class="textclass">
+        <div>
+            <img class="cover" src="images/title.png" />
+        </div>
+        <h2><a href="">Play</a></h2>
         <h2><a href="">Schedule</a></h2>
         <h2><a href="">Standings</a></h2>
         <h2><a href="">Playoff Picture</a></h2>
