@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>YouPlay</title>
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    
+    <link href="css/stylish-portfolio.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="top" class="header">
+        
+        <div class="vert-text">
+            <h1>YouPlay</h1>
+            <h3>
+                Play Music  <em>Based on Your Mood.</em></h3>
+            <a onclick="javascript:login()" class="btn btn-default btn-lg">Log In</a>
+        </div>
+    </div>
+
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="https://cdn.firebase.com/v0/firebase.js"></script>
+    <script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.4.1/firebase-simple-login.js'></script>
+
+    <script>
+        var chatRef = new Firebase('https://fiery-fire-912.firebaseio.com');
+        var auth = new FirebaseSimpleLogin(chatRef, function(error, user) {
+          if (error) {
+            console.log(error);
+          } else if (user) {
+            // user authenticated with Firebase
+            console.log('User ID: ' + user.uid + ', Provider: ' + user.provider);
+          } else {
+            // user is logged out
+          }
+        });
+        function login() {
+            auth.login('facebook');
+        }
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    </script>
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    </script>
+    <script>
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    </script>
+
+</body>
+
+</html>
